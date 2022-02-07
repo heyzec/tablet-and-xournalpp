@@ -1,0 +1,13 @@
+# tablet.rules
+# This file needs to be placed in /etc/udev/rules.d/
+# Use udevadm monitor --subsystem-match=usb --property to debug
+
+# Change the path name under RUN+= to point to this script
+
+ACTION=="add", \
+, SUBSYSTEM=="usb" \
+, ATTRS{idVendor}=="256c" \
+, ATTRS{idProduct}=="006d" \
+, DRIVER=="usb" \
+, RUN+="/home/heyzec/Documents/Code/tablet-and-xournalpp/wrapper.sh"
+
